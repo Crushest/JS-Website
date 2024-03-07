@@ -1,9 +1,12 @@
 /*/
 colors to keep
+fffbf4 Background
 FFF3E0 Light Background Color
 2D2B2B Dark edges and text
 9D968B Lighter Text color for highlighted text
 BC2C1A Red for Titles and such
+
+Inspiration: https://dribbble.com/shots/19480136-Recipes-Web-Application 
 /*/
 @font-face {
   font-family: Gatile;
@@ -14,38 +17,45 @@ body {
   font-family: Gatile, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FFF3E0;
+  background-color: #fffbf4;
 }
 
 header {
-  background-color: #FFF3E0;
+  background-color: #fffbf4;
   padding: 20px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 nav h1 {
   margin: 5;
-  flex-grow: 1;
+  justify-content: flex-start;
 }
 
 nav a {
   text-decoration: none;
   color: #333;
-  margin-right: 20px;
+  margin-left: 50px;
 }
 
 nav button {
   background-color: #BC2C1A;
-  color: #FFF3E0;
+  color: #fffbf4;
   border: none;
-  padding: 10px 20px;
+  padding: 5px 15px 5px;
   cursor: pointer;
-  border-radius: 5px;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-family: Gatile, sans-serif;
+  font-size: larger;
 }
 
 .container {
@@ -53,7 +63,7 @@ nav button {
 }
 
 #favorite-meal {
-  background-color: #f9f9f9;
+  background-color: #FFF3E0;
   padding: 20px;
   border-radius: 5px;
 }
@@ -63,7 +73,7 @@ nav button {
 }
 
 #recipeList .container {
-  background-color: #f9f9f9;
+  background-color: #FFF3E0;
   padding: 20px;
   border-radius: 5px;
 }
