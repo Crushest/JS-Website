@@ -1,47 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="recipe.css">
-  <title>Family Recipe Book</title>
+  <title>Family Recipes</title>
 </head>
 <body>
 
 <header>
-  <h1>Family Recipe Book</h1>
-  <button class="add-recipe-button" onclick="openAddRecipeModal()">Add New Recipe</button>
+  <nav>
+    <h1>Family Recipes</h1>
+    <a href="#favorite-meal" id="link">Favorite Meal</a>
+    <a href="#recipe-list">Random Recipe</a>
+    <button>Add Recipe</button>
+  </nav>
 </header>
 
-<div class="recipe-container" id="recipeContainer">
-  <!-- Recipe Cards Go Here -->
+<div class="container">
+  <div id="favorite-meal">
+    <h2>Favorite Meal</h2>
+    <p>Recipe for your favorite meal goes here...</p>
 </div>
+</div>
+<div id="recipeList">
+  <div class="container"">
+    <h2>Banana</h2>
 
-<div class="add-recipe-modal" id="addRecipeModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeAddRecipeModal()">&times;</span>
-    <h2>Add New Recipe</h2>
-    <form id="recipeForm">
-      <label for="recipeName">Name:</label>
-      <input type="text" id="recipeName" name="recipeName" required>
-
-      <label for="recipeDifficulty">Difficulty:</label>
-      <input type="text" id="recipeDifficulty" name="recipeDifficulty" required>
-
-      <label for="recipeTime">Time:</label>
-      <input type="text" id="recipeTime" name="recipeTime" required>
-
-      <label for="recipeIngredients">Ingredients (comma-separated):</label>
-      <textarea id="recipeIngredients" name="recipeIngredients" required></textarea>
-
-      <label for="recipeInstructions">Instructions:</label>
-      <textarea id="recipeInstructions" name="recipeInstructions" required></textarea>
-
-      <button type="button" onclick="addRecipe()">Add Recipe</button>
-    </form>
   </div>
 </div>
 
-<script src="recipe.js"></script>
 </body>
 </html>
