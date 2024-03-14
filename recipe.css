@@ -60,6 +60,7 @@ nav button {
 
 .container {
   margin: 20px;
+  display: flex;
 }
 
 #favorite-meal {
@@ -69,13 +70,14 @@ nav button {
 }
 
 #recipeList {
-  margin-top: 20px;
+  margin: 20px;
 }
 
 #recipeList .container {
   background-color: #FFF3E0;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
+  margin: 20px;
 }
 
 h2 {
