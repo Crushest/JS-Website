@@ -61,25 +61,45 @@ nav button {
 .container {
   margin: 20px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 #favorite-meal {
   background-color: #FFF3E0;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 10% 20%;
+  border-radius: 8px;
+  margin-right: 10px;
 }
 
-#recipeList {
-  margin: 20px;
+#recent{
+ position: relative;
+ text-align: center;
 }
 
-#recipeList .container {
+.recipeBox{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.recipeBox li{
   background-color: #FFF3E0;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 20px;
+  padding: 10%;
+  border-radius: 8px;
+  height: 100%;
+  width: 100px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  gap: 10px;
 }
+
+
 
 h2 {
   color: #BC2C1A;
+  text-decoration: underline;
 }
