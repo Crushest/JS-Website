@@ -21,8 +21,10 @@ body {
 }
 
 header {
-  background-color: #fffbf4;
+  background-color: #FFF3E0;
   padding: 20px;
+  padding-bottom: 250px;
+  margin-bottom: 75px;
 }
 
 nav {
