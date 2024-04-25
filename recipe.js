@@ -5,7 +5,8 @@ import { getAuth,
          createUserWithEmailAndPassword,
          signInWithEmailAndPassword,
          signOut, 
-          } from "firebase/auth"
+         onAuthStateChanged, 
+         GoogleAuthProvider} from "firebase/auth"
 
 const firebaseConfig = {
     apiKey: "AIzaSyAMx5Txlm2VbxLUKL-xsJVMEvvJ2YcZSoc",
@@ -18,15 +19,22 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
-
+const provider = new GoogleAuthProvider()
 //Firebase Setup End
+
+//HTML elements
+const signOutButton = document.getElementById("signOutBtn")
+const viewLoggedOut = document.getElementById("loggedOutView")
+const viewLoggedIn = document.getElementById("loggedInView")
+
+//Event Listeners
+signOutButton.addEventListener("click", authSignOut)
 
 function authCreateAccountWithEmail() {
   const email = emailInputEl.value;
   const password = passwordInputEl.value;
 createUserWithEmailAndPassword(auth, email, password)
 .then((userCredential) => {
-  showLoggedInView()
   clearAuthFields()
 })
 .catch((error) => {
@@ -41,7 +49,6 @@ function authSignInWithEmail() {
   
 signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        showLoggedInView()
         clearAuthFields()
     })
     .catch((error) => {
@@ -52,11 +59,18 @@ signInWithEmailAndPassword(auth, email, password)
 function authSignOut() {
   signOut(auth)
       .then(() => {
-          showLoggedOutView()
       }).catch((error) => {
           console.error(error.message)
       })
 }
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+      showLoggedInView()
+  } else {
+      showLoggedOutView()
+  }
+})
 
 function clearInputField(field) {
 	field.value = ""
