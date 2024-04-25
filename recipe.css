@@ -51,6 +51,64 @@ nav button {
   font-family: Gatile, sans-serif;
   font-size: larger;
   margin-left: auto;
+  margin-right: 25px;
+}
+
+.subMenuWrap{
+  position: absolute;
+  top: 7.5%;
+  right: 0%;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s
+}
+
+.subMenuWrap.openMenu{
+  max-height: 400px;
+}
+
+.subMenu{
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+}
+
+.subMenu h2{
+  text-align: center;
+}
+
+.subMenu hr{
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.subMenuLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 10px 0;
+}
+
+.subMenuLink p{
+  width: 100%;
+}
+
+.subMenuLink span{
+  font-size: 15px;
+  transition: transform 0.5s;
+}
+
+.subMenuLink:hover span{
+  transform: translateX(5px);
+}
+
+.subMenuLink:hover p{
+  font-weight: 600;
 }
 
 .container {
