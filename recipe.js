@@ -21,6 +21,17 @@ const auth = getAuth(app)
 
 //Firebase Setup End
 
+const viewLoggedOut = document.getElementById("loggedOutView")
+const viewLoggedIn = document.getElementById("loggedInView")
+const signInWithGoogleButtonEl = document.getElementById("sign-in-with-google-btn")
+const emailInputEl = document.getElementById("email-input")
+const passwordInputEl = document.getElementById("password-input")
+const signInButtonEl = document.getElementById("sign-in-btn")
+const createAccountButtonEl = document.getElementById("create-account-btn")
+const signOutButtonEl = document.getElementById("sign-out-btn")
+const userProfilePictureEl = document.getElementById("user-profile-picture")
+
+
 function authCreateAccountWithEmail() {
   const email = emailInputEl.value;
   const password = passwordInputEl.value;
@@ -74,13 +85,13 @@ function clearAuthFields() {
 }
 
 function showLoggedOutView() {
-  hideView(viewLoggedIn)
-  showView(viewLoggedOut)
+  hideView(viewLoggedIn);
+  showView(viewLoggedOut);
 }
 
 function showLoggedInView() {
-  hideView(viewLoggedOut)
-  showView(viewLoggedIn)
+  hideView(viewLoggedOut);
+  showView(viewLoggedIn);
 }
 
 function showView(view) {
