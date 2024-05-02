@@ -26,7 +26,6 @@ function authCreateAccountWithEmail() {
   const password = passwordInputEl.value;
 createUserWithEmailAndPassword(auth, email, password)
 .then((userCredential) => {
-  showLoggedInView()
   clearAuthFields()
 })
 .catch((error) => {
@@ -41,7 +40,6 @@ function authSignInWithEmail() {
   
 signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        showLoggedInView()
         clearAuthFields()
     })
     .catch((error) => {
@@ -52,11 +50,19 @@ signInWithEmailAndPassword(auth, email, password)
 function authSignOut() {
   signOut(auth)
       .then(() => {
-          showLoggedOutView()
       }).catch((error) => {
           console.error(error.message)
       })
 }
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+      showLoggedInView()
+      showProfilePicture(userProfilePictureEl, user)
+  } else {
+      showLoggedOutView() 
+  }
+})
 
 function clearInputField(field) {
 	field.value = ""
