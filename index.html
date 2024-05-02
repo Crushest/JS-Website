@@ -16,23 +16,43 @@
     <button>Add Recipe</button>
     <img src="images/default.png" class="user-pic" onclick="toggleMenu()">
 
-    <div class="subMenuWrap" id="subMenu">
-      <div class="subMenu">
-          <h2> User's Name </h2>
-          <hr>
-          <a href="#" class="subMenuLink"> 
-            <p>Edit Account</p>
-            <span>></span>
-          </a>
-          <a href="#" class="subMenuLink"> 
-            <p>Submitted Recipes</p>
-            <span>></span>
-          </a>
-          <a href="#" class="subMenuLink"> 
-            <p>Logout</p>
-            <span>></span>
-          </a>
+    <div>
+    <section id="loggedInView">
+      <div class="subMenuWrap" id="loggedInsubMenu">
+        <div class="subMenu">
+            <h2> [User's Name ]</h2>
+            <hr>
+            <a href="#" class="subMenuLink"> 
+              <p>Edit Account</p>
+              <span>></span>
+            </a>
+            <a href="#" class="subMenuLink"> 
+              <p>Submitted Recipes</p>
+              <span>></span>
+            </a>
+            <a id="signOutBtn" class="subMenuLink"> 
+              <p>Logout</p>
+              <span>></span>
+            </a>
       </div>
+    </section>
+
+    <section id="loggedOutView">
+      <div class="subMenuWrap" id="subMenu">
+        <div class="subMenu">
+            <h2> Welcome! </h2>
+            <hr>
+            <a href="#" class="subMenuLink"> 
+              <p>Create Account</p>
+              <span>></span>
+            </a>
+            <a href="#" class="subMenuLink"> 
+              <p>Submitted Recipes</p>
+              <span>></span>
+            </a>
+        </div>
+      </div>
+    </section>
     </div>
   </nav>
 </header>
