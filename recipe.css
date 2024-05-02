@@ -176,7 +176,7 @@ h2 {
 }
 
 #loggedOutView {
-  display: none;
+  display: flex;
 }
 
 #loggedInView {
