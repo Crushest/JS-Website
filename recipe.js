@@ -6,7 +6,8 @@ import { getAuth,
          signInWithEmailAndPassword,
          signOut, 
          onAuthStateChanged, 
-         GoogleAuthProvider} from "firebase/auth"
+         GoogleAuthProvider,
+         signInWithPopup } from "firebase/auth"
 
 const firebaseConfig = {
     apiKey: "AIzaSyAMx5Txlm2VbxLUKL-xsJVMEvvJ2YcZSoc",
@@ -28,13 +29,13 @@ const viewLoggedOut = document.getElementById("loggedOutView");
 const viewLoggedIn = document.getElementById("loggedInView");
 const emailInputEl = document.getElementById("email-input"); 
 const passwordInputEl = document.getElementById("password-input");
-const signInButtonEl = document.getElementById("sign-in-btn")
-const createAccountButtonEl = document.getElementById("create-account-btn")
-const signInWithGoogleButtonEl = document.getElementById("sign-in-with-google-btn")
+const signInButtonEl = document.getElementById("sign-in-btn");
+const createAccountButtonEl = document.getElementById("create-account-btn");
+const signInWithGoogleButtonEl = document.getElementById("sign-in-with-google-btn");
 
 // Event Listeners
 signOutButton.addEventListener("click", authSignOut);
-signInWithGoogleButtonEl.addEventListener("click", authSignInWithGoogle)
+signInWithGoogleButtonEl.addEventListener("click", authSignInWithGoogle);
 signInButtonEl.addEventListener("click", authSignInWithEmail)
 createAccountButtonEl.addEventListener("click", authCreateAccountWithEmail)
 
@@ -55,9 +56,7 @@ function authCreateAccountWithEmail() {
       clearAuthFields();
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage);
+      console.error(error.Message);
     });
 }
 
