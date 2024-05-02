@@ -22,79 +22,82 @@ const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
 //Firebase Setup End
 
-//HTML elements
-const signOutButton = document.getElementById("signOutBtn")
-const viewLoggedOut = document.getElementById("loggedOutView")
-const viewLoggedIn = document.getElementById("loggedInView")
+// HTML elements
+const signOutButton = document.getElementById("signOutBtn");
+const viewLoggedOut = document.getElementById("loggedOutView");
+const viewLoggedIn = document.getElementById("loggedInView");
+const emailInputEl = document.getElementById("emailInput"); 
+const passwordInputEl = document.getElementById("passwordInput");
 
-//Event Listeners
-signOutButton.addEventListener("click", authSignOut)
+// Event Listeners
+signOutButton.addEventListener("click", authSignOut);
 
 function authCreateAccountWithEmail() {
   const email = emailInputEl.value;
   const password = passwordInputEl.value;
-createUserWithEmailAndPassword(auth, email, password)
-.then((userCredential) => {
-  clearAuthFields()
-})
-.catch((error) => {
-  const errorCode = error.code;
-  const errorMessage = error.message;
-  console.log(errorMessage)
-})};
-
-function authSignInWithEmail() {
-  const email = emailInputEl.value
-  const password = passwordInputEl.value
-  
-signInWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        clearAuthFields()
+      clearAuthFields();
     })
     .catch((error) => {
-        console.error(error.message)
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+}
+
+function authSignInWithEmail() {
+  const email = emailInputEl.value;
+  const password = passwordInputEl.value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      clearAuthFields();
     })
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
 
 function authSignOut() {
   signOut(auth)
-      .then(() => {
-      }).catch((error) => {
-          console.error(error.message)
-      })
+    .then(() => {})
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-      showLoggedInView()
+    showLoggedInView();
   } else {
-      showLoggedOutView()
+    showLoggedOutView();
   }
-})
+});
 
 function clearInputField(field) {
-	field.value = ""
+  field.value = "";
 }
 
 function clearAuthFields() {
-	clearInputField(emailInputEl)
-	clearInputField(passwordInputEl)
+  clearInputField(emailInputEl);
+  clearInputField(passwordInputEl);
 }
 
 function showLoggedOutView() {
-  hideView(viewLoggedIn)
-  showView(viewLoggedOut)
+  hideView(viewLoggedIn);
+  showView(viewLoggedOut);
 }
 
 function showLoggedInView() {
-  hideView(viewLoggedOut)
-  showView(viewLoggedIn)
+  hideView(viewLoggedOut);
+  showView(viewLoggedIn);
 }
 
 function showView(view) {
-  view.style.display = "flex"
+  view.style.display = "flex";
 }
 
 function hideView(view) {
-  view.style.display = "none"
+  view.style.display = "none";
 }

@@ -16,8 +16,7 @@
     <button>Add Recipe</button>
     <img src="images/default.png" class="user-pic" onclick="toggleMenu()">
 
-    <section id="loggedInView">
-      <div class="subMenuWrap" id="subMenu">
+    <section class="subMenuWrap" id="loggedInView">
         <div class="subMenu">
             <h2> [User's Name ]</h2>
             <hr>
@@ -33,24 +32,21 @@
               <p>Logout</p>
               <span>></span>
             </a>
-        </div>
       </div>
     </section>
 
-    <section id="loggedOutView">
-      <div class="subMenuWrap" id="subMenu">
+    <section class="subMenuWrap" id="loggedOutView">
         <div class="subMenu">
             <h2> Welcome! </h2>
             <hr>
             <a href="#" class="subMenuLink"> 
-              <p>Create Account</p>
+              <p>Create Account/Login</p>
               <span>></span>
             </a>
             <a href="#" class="subMenuLink"> 
               <p>Submitted Recipes</p>
               <span>></span>
             </a>
-        </div>
       </div>
     </section>
   </nav>
@@ -96,7 +92,7 @@
 </div>
 
 <script>
-  let subMenu = document.getElementById("subMenu");
+  let subMenu = document.getElementsByClassName("subMenu");
 
   function toggleMenu(){
     subMenu.classList.toggle("openMenu")
