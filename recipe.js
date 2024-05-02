@@ -26,11 +26,23 @@ const provider = new GoogleAuthProvider()
 const signOutButton = document.getElementById("signOutBtn");
 const viewLoggedOut = document.getElementById("loggedOutView");
 const viewLoggedIn = document.getElementById("loggedInView");
-const emailInputEl = document.getElementById("emailInput"); 
-const passwordInputEl = document.getElementById("passwordInput");
+const emailInputEl = document.getElementById("email-input"); 
+const passwordInputEl = document.getElementById("password-input");
 
 // Event Listeners
 signOutButton.addEventListener("click", authSignOut);
+signInWithGoogleButtonEl.addEventListener("click", authSignInWithGoogle)
+signInButtonEl.addEventListener("click", authSignInWithEmail)
+createAccountButtonEl.addEventListener("click", authCreateAccountWithEmail)
+
+function authSignInWithGoogle() {
+  signInWithPopup(auth, provider)
+      .then((result) => {
+          console.log("Signed in with Google")
+      }).catch((error) => {
+          console.error(error.message)
+      })
+}
 
 function authCreateAccountWithEmail() {
   const email = emailInputEl.value;

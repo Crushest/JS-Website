@@ -1,18 +1,23 @@
+@font-face {
+    font-family: Gatile;
+    src: url(Font/Gatile.otf);
+ }
+
 :root {
-    --primary-color: #FFDE00;
-    --primary-light-color: #FFE769;
-    --secondary-color: #FFE4BA;
+    --primary-color: #ffda9e;
+    --primary-light-color: #FFF3E0;
+    --secondary-color: #c48f3a;
     --secondary-light-color: #FFF6E8;
     --post-color: #62EEA8;
     --delete-color: #FF9F9F;
     --light-color: #FFFEFC;
-    --grey-color: #747E79;
-    --dark-color: #000000;
+    --grey-color: #2D2B2B;
+    --dark-color: #2D2B2B;
 
-    --primary-font: 'Cabin', sans-serif;
-    --seconday-font: 'Calistoga', sans-serif;
+    --primary-font: Gatile, sans-serif;
+    --seconday-font: Gatile, sans-serif;
     
-    --border-width: 3px;
+    --border-width: 2px;
     --element-border-radius: 5px;
     
     --button-height: 5px;
@@ -174,14 +179,16 @@ button:hover {
 }
 
 .provider-btn {
+    margin-bottom: 25px;
+    margin-top: 15px;
     color: var(--dark-color);
     background-color: var(--light-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5em;
+    gap: 1em;
     border: 0;
-    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .25);
+    box-shadow: 3px 3px 3px 1px rgba(100, 100, 100, 0.25);
 }
 
 .provider-btn:hover {
