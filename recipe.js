@@ -28,6 +28,9 @@ const viewLoggedOut = document.getElementById("loggedOutView");
 const viewLoggedIn = document.getElementById("loggedInView");
 const emailInputEl = document.getElementById("email-input"); 
 const passwordInputEl = document.getElementById("password-input");
+const signInButtonEl = document.getElementById("sign-in-btn")
+const createAccountButtonEl = document.getElementById("create-account-btn")
+const signInWithGoogleButtonEl = document.getElementById("sign-in-with-google-btn")
 
 // Event Listeners
 signOutButton.addEventListener("click", authSignOut);
